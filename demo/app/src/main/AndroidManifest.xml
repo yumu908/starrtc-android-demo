@@ -13,16 +13,19 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.READ_LOGS" />
 
     <application
-        android:name="App"
+        android:name=".App"
         android:allowBackup="true"
         android:icon="@drawable/star_fox_500"
         android:label="@string/app_name"
@@ -33,6 +36,7 @@
         tools:targetApi="m">
         <activity
             android:name=".demo.SplashActivity"
+            android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -40,27 +44,8 @@
             </intent-filter>
         </activity>
 
-        <!-- starAvSdk -->
-        <!-- 【必须】消息收发service -->
-        <!--
-            <service
-            android:name="com.starrtc.starrtcsdk.core.service.StarService"
+        <service android:name=".demo.service.KeepLiveService"
             android:exported="true">
-            <intent-filter>
-                <action android:name="cn.starav.staravsdk.service.StarService" />
-            </intent-filter>
-        </service>
-        <service
-            android:name="com.starrtc.starrtcsdk.core.service.StarAssistService"
-            android:exported="false">
-            <intent-filter>
-                <action android:name="cn.starav.staravsdk.service.StarAssistService" />
-            </intent-filter>
-        </service>
-        -->
-        <!-- starAvSdk -->
-
-        <service android:name=".demo.service.KeepLiveService">
             <intent-filter>
                 <action android:name="com.starrtc.demo.service.KeepLiveService"/>
             </intent-filter>
@@ -72,146 +57,189 @@
 
         <activity
             android:name=".demo.StarAvDemoActivity"
+            android:exported="false"
             android:screenOrientation="portrait" />
 
         <!-- 设置 -->
         <activity
             android:name=".demo.setting.AboutActivity"
+            android:exported="false"
             android:screenOrientation="portrait" />
         <activity
             android:name=".demo.setting.SettingActivity"
+            android:exported="false"
             android:screenOrientation="portrait" />
 
         <!-- VOIP -->
         <activity
             android:name=".demo.voip.VoipListActivity"
+            android:exported="false"
             android:screenOrientation="portrait" />
         <activity
             android:name=".demo.voip.VoipActivity"
+            android:exported="false"
             android:screenOrientation="portrait" />
         <activity
             android:name=".demo.voip.VoipAudioActivity"
+            android:exported="false"
             android:screenOrientation="portrait" />
         <activity
             android:name=".demo.voip.VoipCreateActivity"
+            android:exported="false"
             android:screenOrientation="portrait" />
         <activity
             android:name=".demo.voip.VoipRingingActivity"
+            android:exported="false"
             android:screenOrientation="portrait" />
         <activity
             android:name=".demo.voip.VoipAudioRingingActivity"
+            android:exported="false"
             android:screenOrientation="portrait" />
         <!-- P2P直连 -->
         <activity android:name=".demo.p2p.VoipP2PDemoActivity"
+            android:exported="false"
             android:screenOrientation="landscape"/>
         <activity android:name=".demo.p2p.VoipP2PCreateActivity"
+            android:exported="false"
             android:screenOrientation="landscape"/>
         <activity android:name=".demo.p2p.VoipP2PRingingActivity"
+            android:exported="false"
             android:screenOrientation="landscape"/>
         <activity android:name=".demo.p2p.VoipP2PActivity"
+            android:exported="false"
             android:screenOrientation="landscape"/>
         <!-- 视频互动直播 -->
         <activity
             android:name=".demo.videolive.VideoLiveListActivity"
+            android:exported="false"
             android:screenOrientation="portrait" />
         <activity
             android:name=".demo.videolive.VideoLiveCreateActivity"
+            android:exported="false"
             android:screenOrientation="portrait" />
         <activity
             android:name=".demo.videolive.VideoLiveActivity"
+            android:exported="false"
             android:screenOrientation="portrait" />
 
         <!-- 视频会议 -->
         <activity
             android:name=".demo.videomeeting.VideoMeetingActivity"
+            android:exported="false"
             android:screenOrientation="landscape" />
         <activity
             android:name=".demo.videomeeting.VideoMeetingListActivity"
+            android:exported="false"
             android:screenOrientation="portrait" />
         <activity
             android:name=".demo.videomeeting.VideoMeetingCreateActivity"
+            android:exported="false"
             android:screenOrientation="portrait" />
 
         <!-- 超级聊天室 -->
         <activity
             android:name=".demo.superroom.SuperRoomActivity"
+            android:exported="false"
             android:screenOrientation="portrait" />
         <activity
             android:name=".demo.superroom.SuperRoomCreateActivity"
+            android:exported="false"
             android:screenOrientation="portrait" />
         <activity
             android:name=".demo.superroom.SuperRoomListActivity"
+            android:exported="false"
             android:screenOrientation="portrait" />
 
         <!-- 测试 -->
         <activity
             android:name=".demo.test.LoopTestActivity"
+            android:exported="false"
             android:screenOrientation="portrait" />
 
         <!-- IM -->
         <activity
             android:name=".demo.im.chatroom.ChatroomActivity"
+            android:exported="false"
             android:screenOrientation="portrait" />
         <activity
             android:name=".demo.im.chatroom.ChatroomCreateActivity"
+            android:exported="false"
             android:screenOrientation="portrait" />
         <activity
             android:name=".demo.im.chatroom.ChatroomListActivity"
+            android:exported="false"
             android:screenOrientation="portrait" />
         <activity
             android:name=".demo.im.IMDemoActivity"
+            android:exported="false"
             android:screenOrientation="portrait" />
         <activity
             android:name=".demo.im.c2c.C2CActivity"
+            android:exported="false"
             android:screenOrientation="portrait" />
         <activity
             android:name=".demo.im.group.MessageGroupActivity"
+            android:exported="false"
             android:screenOrientation="portrait" />
         <activity
             android:name=".demo.im.group.MessageGroupCreateActivity"
+            android:exported="false"
             android:screenOrientation="portrait" />
         <activity
             android:name=".demo.im.group.MessageGroupListActivity"
+            android:exported="false"
             android:screenOrientation="portrait" />
         <activity
             android:name=".demo.im.c2c.C2CListActivity"
+            android:exported="false"
             android:screenOrientation="portrait" />
         <activity
             android:name=".demo.im.c2c.C2CCreateActivity"
+            android:exported="false"
             android:screenOrientation="portrait" />
         <activity
             android:name=".demo.im.group.MessageGroupSettingActivity"
+            android:exported="false"
             android:screenOrientation="portrait" />
 
         <!-- 音频互动直播 -->
         <activity
             android:name=".demo.audiolive.AudioLiveListActivity"
+            android:exported="false"
             android:screenOrientation="portrait" />
         <activity
             android:name=".demo.audiolive.AudioLiveCreateActivity"
+            android:exported="false"
             android:screenOrientation="portrait" />
         <activity
             android:name=".demo.audiolive.AudioLiveActivity"
+            android:exported="false"
             android:screenOrientation="portrait" />
 
         <!-- 小班课 -->
         <activity
             android:name=".demo.miniclass.MiniClassCreateActivity"
+            android:exported="false"
             android:screenOrientation="portrait" />
         <activity
             android:name=".demo.miniclass.MiniClassListActivity"
+            android:exported="false"
             android:screenOrientation="portrait" />
         <activity
             android:name=".demo.miniclass.MiniClassActivity"
+            android:exported="false"
             android:screenOrientation="landscape" />
-        <activity android:name=".demo.setting.SetupServerHostActivity"></activity>
+        <activity android:name=".demo.setting.SetupServerHostActivity"
+            android:exported="false"></activity>
 
         <!--rtsp转发测试-->
         <activity
             android:name=".demo.thirdstream.RtspTestActivity"
+            android:exported="false"
             android:screenOrientation="portrait" />
         <activity
             android:name=".demo.thirdstream.RtspTestListActivity"
+            android:exported="false"
             android:screenOrientation="portrait" />
     </application>
 

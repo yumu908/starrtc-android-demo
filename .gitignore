@@ -34,4 +34,4 @@ local.properties
 # osx
 *~
 .DS_Store
-gradle.properties
+# gradle.properties

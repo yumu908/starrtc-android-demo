@@ -34,7 +34,8 @@ public class MLOC {
     public static Context appContext;
     public static String userId = "";
 
-    public static String SERVER_HOST                = "demo.starrtc.com";
+    // 将默认服务器地址更改为您的局域网 IP
+    public static String SERVER_HOST                = "192.168.0.188";
     public static String VOIP_SERVER_URL            = SERVER_HOST+":10086";
     public static String IM_SERVER_URL              = SERVER_HOST+":19903";
     public static String CHATROOM_SERVER_URL        = SERVER_HOST+":19906";
@@ -44,11 +45,13 @@ public class MLOC {
 
     public static Boolean AEventCenterEnable = false;
 
-    public static String IM_GROUP_LIST_URL  = "http://www.starrtc.com/aec/group/list.php";
-    public static String IM_GROUP_INFO_URL  = "http://www.starrtc.com/aec/group/members.php";
-    public static String LIST_SAVE_URL      = "http://www.starrtc.com/aec/list/save.php";
-    public static String LIST_DELETE_URL    = "http://www.starrtc.com/aec/list/del.php";
-    public static String LIST_QUERY_URL     = "http://www.starrtc.com/aec/list/query.php";
+    // 如果您也部署了 API 服务，建议将这些也指向您的 IP
+    // 通常 starrtc-server 的 API 服务默认端口可能是 19933
+    public static String IM_GROUP_LIST_URL  = "http://"+SERVER_HOST+":19933/aec/group/list.php";
+    public static String IM_GROUP_INFO_URL  = "http://"+SERVER_HOST+":19933/aec/group/members.php";
+    public static String LIST_SAVE_URL      = "http://"+SERVER_HOST+":19933/aec/list/save.php";
+    public static String LIST_DELETE_URL    = "http://"+SERVER_HOST+":19933/aec/list/del.php";
+    public static String LIST_QUERY_URL     = "http://"+SERVER_HOST+":19933/aec/list/query.php";
 
     public static final int LIST_TYPE_CHATROOM = 0;             //IM 聊天室
     public static final int LIST_TYPE_LIVE = 1;                 //直播
